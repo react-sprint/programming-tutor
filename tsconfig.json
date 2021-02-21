@@ -1,0 +1,16 @@
+{
+"compilerOptions": {
+  "lib": ["es2020", "dom"],
+  "module": "commonjs",
+  "target": "es2020",
+
+  "strict": true,
+  "esModuleInterop": true,
+  "skipLibCheck": true,
+  "forceConsistentCasingInFileNames": true,
+  "preserveConstEnums": true,
+  "jsx": "react"
+},
+"include": ["src/**/*"],
+"exclude": ["node_modules", "**/*.spec.ts"]
+}
