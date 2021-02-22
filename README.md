@@ -3,7 +3,7 @@
 
 ## local build
 
-### yarn run start (http://localhost:4000
+### yarn run start (http://localhost:4000)
 
 
 ## lint
