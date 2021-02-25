@@ -26,7 +26,19 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                config: path.resolve(__dirname, '..', 'postcss', 'postcss.config.js'),
+              },
+            },
+          },
+          'sass-loader',
+        ],
       },
     ],
   },
