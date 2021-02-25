@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..', '..');
 const PUBLIC_PATH = path.resolve(PROJECT_ROOT, 'public');
@@ -22,6 +23,10 @@ module.exports = {
           },
         ],
         exclude: /node_modules/,
+      },
+      {
+        test: /\.(css|scss)$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
     ],
   },
@@ -46,5 +51,6 @@ module.exports = {
         },
       },
     }),
+    new MiniCssExtractPlugin(),
   ],
 };
