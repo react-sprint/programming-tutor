@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 import { hot } from 'react-hot-loader/root';
-import './App.scss';
+import styles from './App.scss';
 
-const App: React.FC = () => <div className={classNames('app', 'title')}>App.tsx</div>;
+const App: React.FC = () => <div className={classNames(styles.app, styles.title)}>App.tsx</div>;
 
 export default hot(App);

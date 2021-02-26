@@ -28,7 +28,12 @@ module.exports = {
         test: /\.(css|scss)$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
           {
             loader: 'postcss-loader',
             options: {
@@ -43,7 +48,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx', 'scss'],
     alias: {
       '~': SRC_PATH,
       assets: path.join(SRC_PATH, 'assets'),
