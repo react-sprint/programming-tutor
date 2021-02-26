@@ -33,7 +33,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                config: path.resolve(__dirname, '..', 'postcss', 'postcss.config.js'),
+                plugins: ['autoprefixer'],
               },
             },
           },
