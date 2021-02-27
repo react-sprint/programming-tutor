@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   countValueSelector,
@@ -6,6 +7,7 @@ import {
   increaseAsyncCounterAction,
   increaseCounterAction,
 } from '~/modules/example/counter';
+import styles from './index.scss';
 
 const Counter = () => {
   const dispatch = useDispatch();
@@ -13,7 +15,7 @@ const Counter = () => {
 
   return (
     <div>
-      <p>{value}</p>
+      <p className={classNames(styles.app, styles.title)}>{value}</p>
       <button type="button" onClick={() => dispatch(increaseCounterAction())}>
         Increase
       </button>

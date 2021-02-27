@@ -48,7 +48,7 @@ export const countValueSelector = createSelector([exampleSelector], (exampleStat
 export function* increaseCounterAsync() {
   try {
     yield put(increaseAsyncCounterAction.request());
-    const response = yield call(mockFetch);
+    const response: number = yield call(mockFetch);
 
     yield put(increaseAsyncCounterAction.success(response));
   } catch (e) {
