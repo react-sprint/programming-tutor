@@ -1,8 +1,13 @@
 import React from 'react';
-import classNames from 'classnames';
 import { hot } from 'react-hot-loader/root';
-import styles from './App.scss';
+import { Provider } from 'react-redux';
+import { store } from '~/modules';
+import Counter from './counter';
 
-const App: React.FC = () => <div className={classNames(styles.app, styles.title)}>App.tsx</div>;
+const App: React.FC = () => (
+  <Provider store={store}>
+    <Counter />
+  </Provider>
+);
 
 export default hot(App);
